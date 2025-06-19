@@ -42,7 +42,7 @@
 
 This repository contains a collection of Architectural Decision Records (ADRs) that document the architectural decisions made during the development of a software project. Each ADR is a standalone document that describes a specific decision, its context, and its consequences. Some ADRs may also include links to related decisions or external resources for further reading. Many are opinionated, but they are all based on our experience and best practices. Some ADRs may be updated or superseded as the project evolves, and new ADRs may be added to address new decisions or changes in the architecture.
 
-### 0000 - Initial ADR Template
+### 0000 - Initial ADR Template - Present
 This ADR provides a template for documenting architectural decisions. It is based on the template from the [ADR GitHub repository](https://github.com/adr/adr).
 
 Use this template to create new ADRs by copying it and filling in the relevant information for each decision.
@@ -170,7 +170,7 @@ This ADR addresses the use of Google Cloud Platform (GCP) as a cloud provider fo
 It emphasizes the importance of using GCP IAM for managing user identities and permissions, ensuring secure access to resources.
 The ADR also suggests using GCP Cloud Storage for object storage and GCP Cloud SQL for managed database services.
 
-### 0024 - Git
+### 0024 - Git - Present
 This ADR discusses the use of Git for version control, recommending the use of Git branches for managing development workflows.
 It emphasizes the importance of using Git tags for versioning releases and maintaining a clean commit history.
 The ADR also suggests using Git hooks for enforcing coding standards and automating tasks like running tests and linting before commits using pre-commit hooks.
@@ -230,7 +230,7 @@ This ADR outlines the standards for making HTTP requests in Python applications,
 It emphasizes the importance of proper error handling, timeout configuration, and retry mechanisms when making HTTP requests.
 The ADR also discusses best practices for working with RESTful APIs and handling various response formats.
 
-### 0034 - Data Validation
+### 0034 - Data Validation - Present
 This ADR discusses the approach to data validation in Python applications, recommending the use of Pydantic for validating and parsing data.
 It emphasizes the importance of validating input data at the application boundaries to ensure data integrity and prevent security vulnerabilities.
 The ADR also discusses using Pydantic for application configuration management, providing a type-safe way to handle configuration settings.
@@ -240,7 +240,7 @@ This ADR outlines the approach to storing non-hot data, recommending the use of 
 It emphasizes that databases should primarily be used for data that needs to be searched and indexed, while larger objects or infrequently accessed data should be stored in object storage.
 The ADR discusses strategies for efficiently linking database records with objects in cloud storage and handling uploads and downloads securely.
 
-### 0036 - Build Process
+### 0036 - Build Process - Present
 This ADR details the application build process, focusing on creating reproducible builds for Python applications.
 It recommends using containerization for the build process to ensure consistency across different environments and automated CI/CD pipelines.
 The ADR discusses the steps involved in building a Python application, including dependency resolution, testing, linting, and packaging.
