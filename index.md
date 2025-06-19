@@ -1,42 +1,42 @@
 # ADRs
 
-- [0000](./docs/adrs/0000-template.md) - 2025-06-19 - Initial ADR template (based on the one from the [ADR GitHub repository](https://github.com/adr/adr))
-- [0001](./docs/adrs/0001-IAM.md) - 2025-06-19 - IAM
-- [0002](./docs/adrs/0002-logging-and-error-handling.md) - 2025-06-19 - Logging and Error Handling
-- [0003](./docs/adrs/0003-telemetry.md) - 2025-06-19 - Telemetry
-- [0004](./docs/adrs/0004-configuration.md) - 2025-06-19 - Configuration
-- [0005](./docs/adrs/0005-application-structure.md) - 2025-06-19 - Application structure
-- [0006](./docs/adrs/0006-application-lifecycle.md) - 2025-06-19 - Application lifecycle
-- [0007](./docs/adrs/0007-application-deployment.md) - 2025-06-19 - Application deployment
-- [0008](./docs/adrs/0008-application-monitoring.md) - 2025-06-19 - Application monitoring
-- [0009](./docs/adrs/0009-application-security.md) - 2025-06-19 - Application security
-- [0010](./docs/adrs/0010-application-testing.md) - 2025-06-19 - Application testing
-- [0011](./docs/adrs/0011-language-and-framework.md) - 2025-06-19 - Language and framework
-- [0012](./docs/adrs/0012-database.md) - 2025-06-19 - Database
-- [0013](./docs/adrs/0013-caching.md) - 2025-06-19 - Caching
-- [0014](./docs/adrs/0014-messaging.md) - 2025-06-19 - Messaging
-- [0015](./docs/adrs/0015-async-processing.md) - 2025-06-19 - Async processing
-- [0016](./docs/adrs/0016-frontend.md) - 2025-06-19 - Frontend
-- [0017](./docs/adrs/0017-api-design.md) - 2025-06-19 - API design
-- [0018](./docs/adrs/0018-python-standards.md) - 2025-06-19 - Python standards
-- [0019](./docs/adrs/0019-docker.md) - 2025-06-19 - Docker
-- [0020](./docs/adrs/0020-kubernetes.md) - 2025-06-19 - Kubernetes
-- [0021](./docs/adrs/0021-terraform.md) - 2025-06-19 - Terraform
-- [0022](./docs/adrs/0022-aws.md) - 2025-06-19 - AWS
-- [0023](./docs/adrs/0023-gcp.md) - 2025-06-19 - GCP
-- [0024](./docs/adrs/0024-git.md) - 2025-06-19 - Git
-- [0025](./docs/adrs/0025-ci-cd.md) - 2025-06-19 - CI/CD
-- [0026](./docs/adrs/0026-container-registry.md) - 2025-06-19 - Container registry
-- [0027](./docs/adrs/0027-python-testing.md) - 2025-06-19 - Python testing
-- [0028](./docs/adrs/0028-python-linting.md) - 2025-06-19 - Python linting
-- [0029](./docs/adrs/0029-python-packaging.md) - 2025-06-19 - Python packaging
-- [0030](./docs/adrs/0030-python-dependency-management.md) - 2025-06-19 - Python dependency management
-- [0031](./docs/adrs/0031-local-development-environment.md) - 2025-06-19 - Local development environment
-- [0032](./docs/adrs/0032-web-framework-selection.md) - 2025-06-19 - Web framework selection criteria
-- [0033](./docs/adrs/0033-http-client-standards.md) - 2025-06-19 - HTTP client standards
-- [0034](./docs/adrs/0034-data-validation.md) - 2025-06-19 - Data validation with Pydantic
-- [0035](./docs/adrs/0035-cloud-storage.md) - 2025-06-19 - Cloud storage for non-hot data
-- [0036](./docs/adrs/0036-build-process.md) - 2025-06-19 - Application build process
+- [x] [0000](./docs/adrs/0000-template.md) - 2025-06-19 - Initial ADR template (based on the one from the [ADR GitHub repository](https://github.com/adr/adr))
+- [ ] [0001](./docs/adrs/0001-IAM.md) - 2025-06-19 - IAM
+- [ ] [0002](./docs/adrs/0002-logging-and-error-handling.md) - 2025-06-19 - Logging and Error Handling
+- [ ] [0003](./docs/adrs/0003-telemetry.md) - 2025-06-19 - Telemetry
+- [ ] [0004](./docs/adrs/0004-configuration.md) - 2025-06-19 - Configuration
+- [ ] [0005](./docs/adrs/0005-application-structure.md) - 2025-06-19 - Application structure
+- [ ] [0006](./docs/adrs/0006-application-lifecycle.md) - 2025-06-19 - Application lifecycle
+- [ ] [0007](./docs/adrs/0007-application-deployment.md) - 2025-06-19 - Application deployment
+- [ ] [0008](./docs/adrs/0008-application-monitoring.md) - 2025-06-19 - Application monitoring
+- [ ] [0009](./docs/adrs/0009-application-security.md) - 2025-06-19 - Application security
+- [ ] [0010](./docs/adrs/0010-application-testing.md) - 2025-06-19 - Application testing
+- [ ] [0011](./docs/adrs/0011-language-and-framework.md) - 2025-06-19 - Language and framework
+- [ ] [0012](./docs/adrs/0012-database.md) - 2025-06-19 - Database
+- [ ] [0013](./docs/adrs/0013-caching.md) - 2025-06-19 - Caching
+- [ ] [0014](./docs/adrs/0014-messaging.md) - 2025-06-19 - Messaging
+- [ ] [0015](./docs/adrs/0015-async-processing.md) - 2025-06-19 - Async processing
+- [ ] [0016](./docs/adrs/0016-frontend.md) - 2025-06-19 - Frontend
+- [ ] [0017](./docs/adrs/0017-api-design.md) - 2025-06-19 - API design
+- [ ] [0018](./docs/adrs/0018-python-standards.md) - 2025-06-19 - Python standards
+- [ ] [0019](./docs/adrs/0019-docker.md) - 2025-06-19 - Docker
+- [ ] [0020](./docs/adrs/0020-kubernetes.md) - 2025-06-19 - Kubernetes
+- [ ] [0021](./docs/adrs/0021-terraform.md) - 2025-06-19 - Terraform
+- [ ] [0022](./docs/adrs/0022-aws.md) - 2025-06-19 - AWS
+- [ ] [0023](./docs/adrs/0023-gcp.md) - 2025-06-19 - GCP
+- [x] [0024](./docs/adrs/0024-git.md) - 2025-06-19 - Git
+- [ ] [0025](./docs/adrs/0025-ci-cd.md) - 2025-06-19 - CI/CD
+- [ ] [0026](./docs/adrs/0026-container-registry.md) - 2025-06-19 - Container registry
+- [ ] [0027](./docs/adrs/0027-python-testing.md) - 2025-06-19 - Python testing
+- [ ] [0028](./docs/adrs/0028-python-linting.md) - 2025-06-19 - Python linting
+- [ ] [0029](./docs/adrs/0029-python-packaging.md) - 2025-06-19 - Python packaging
+- [ ] [0030](./docs/adrs/0030-python-dependency-management.md) - 2025-06-19 - Python dependency management
+- [ ] [0031](./docs/adrs/0031-local-development-environment.md) - 2025-06-19 - Local development environment
+- [ ] [0032](./docs/adrs/0032-web-framework-selection.md) - 2025-06-19 - Web framework selection criteria
+- [ ] [0033](./docs/adrs/0033-http-client-standards.md) - 2025-06-19 - HTTP client standards
+- [x] [0034](./docs/adrs/0034-data-validation.md) - 2025-06-19 - Data validation with Pydantic
+- [ ] [0035](./docs/adrs/0035-cloud-storage.md) - 2025-06-19 - Cloud storage for non-hot data
+- [x] [0036](./docs/adrs/0036-build-process.md) - 2025-06-19 - Application build process
 
 ## Summary
 
