@@ -37,8 +37,8 @@
 - [x] [0034](./docs/adrs/0034-data-validation.md) - 2025-06-19 - Data validation with Pydantic
 - [ ] [0035](./docs/adrs/0035-cloud-storage.md) - 2025-06-19 - Cloud storage for non-hot data
 - [x] [0036](./docs/adrs/0036-build-process.md) - 2025-06-19 - Application build process
-- [ ] [0037](./docs/adrs/0037-extranet.md) - 2025-06-20 - Extranet
-- [ ] [0038](./docs/adrs/0038-extranet-authentication.md) - 2025-06-20 - Extranet authentication
+- [x] [0037](./docs/adrs/0037-extranet.md) - 2025-06-20 - Extranet
+- [x] [0038](./docs/adrs/0038-extranet-authentication.md) - 2025-06-20 - Extranet authentication
 - [ ] [0039](./docs/adrs/0039-helm.md) - 2025-06-20 - Helm
 - [ ] [0040](./docs/adrs/0040-fluxcd.md) - 2025-06-20 - FluxCD
 
@@ -251,9 +251,9 @@ It emphasizes the importance of proper error handling, timeout configuration, an
 The ADR also discusses best practices for working with RESTful APIs and handling various response formats.
 
 ### 0034 - Data Validation
-This ADR discusses the approach to data validation in Python applications, recommending the use of Pydantic for validating and parsing data.
-It emphasizes the importance of validating input data at the application boundaries to ensure data integrity and prevent security vulnerabilities.
-The ADR also discusses using Pydantic for application configuration management, providing a type-safe way to handle configuration settings.
+This ADR establishes Pydantic as our standard tool for data validation, serialization, and settings management in Python applications. It details how to properly define models, use field validators, and leverage Pydantic's features for complex validation scenarios and settings management.
+
+The ADR includes best practices for integrating Pydantic with our web frameworks (Flask and FastAPI), database models (SQLAlchemy), and API endpoints. It also covers performance considerations and testing strategies for validation logic.
 
 ### 0035 - Cloud Storage
 This ADR outlines the approach to storing non-hot data, recommending the use of cloud object storage solutions like GCP Cloud Storage or AWS S3.
@@ -261,22 +261,23 @@ It emphasizes that databases should primarily be used for data that needs to be 
 The ADR discusses strategies for efficiently linking database records with objects in cloud storage and handling uploads and downloads securely.
 
 ### 0036 - Build Process
-This ADR details the application build process, focusing on creating reproducible builds for Python applications.
-It recommends using containerization for the build process to ensure consistency across different environments and automated CI/CD pipelines.
-The ADR discusses the steps involved in building a Python application, including dependency resolution, testing, linting, and packaging.
-It also emphasizes the importance of build artifacts being properly versioned and stored in artifact repositories.
+This ADR defines our containerized build process for Python applications. It establishes Docker as the standard containerization technology with multi-stage builds for optimized images. The ADR details best practices for Dockerfile creation, including security considerations, dependency management, and image optimization.
+
+It also covers our CI/CD integration with Google Cloud Build, artifact management, and versioning strategy. The document includes guidelines for local development with docker-compose and production deployment with Cloud Run or Kubernetes.
 
 ### 0037 - Extranet
-This ADR discusses the design and implementation of an extranet, which is a secure network that allows external users to access specific resources or services.
-It outlines the requirements for the extranet, including user authentication, authorization, and access control.
-The ADR recommends using OAuth 2.0 and OpenID Connect for secure authentication and authorization, allowing external users to access the extranet using their own identity providers.
-It also discusses the use of API gateways for managing access to extranet resources and ensuring secure communication.
+This ADR defines our extranet architecture for providing secure access to client services and sites during development and review phases. It establishes a pattern where client applications are deployed as containers behind an ingress controller with authentication enforcement.
+
+The architecture uses cookie-based authentication with prefixed cookies (wwff_auth_) to avoid interference with the applications' own authentication mechanisms. The ADR details the implementation using Kubernetes ingress annotations, service deployment patterns, and domain configuration.
+
+The document addresses access control management, local development integration, and the security considerations of this approach, ensuring a consistent and secure way to share work-in-progress services with clients and stakeholders.
 
 ### 0038 - Extranet Authentication
-This ADR focuses on the authentication mechanisms for the extranet, recommending the use of OAuth 2.0 and OpenID Connect for secure user authentication. We will use our own identity provider to manage user identities and support federation with external identity providers.
-It emphasizes the importance of implementing secure authentication flows, such as authorization code flow or client credentials flow, depending on the use case.
-The ADR also discusses the use of access tokens and refresh tokens for managing user sessions and ensuring secure access to extranet resources.
-It highlights the need for proper token validation and revocation mechanisms to maintain security and prevent unauthorized access.
+This ADR establishes our authentication system for the extranet infrastructure, based on OAuth 2.0 and OpenID Connect standards. It specifies Authelia as our identity provider, with support for federated authentication through external providers like Google and GitHub.
+
+The ADR details the authentication flow, user management approach, and security considerations including cookie security, token management, and multi-factor authentication options. It provides configuration examples for both the Authelia service and its integration with external identity providers.
+
+The document covers the deployment pattern as containerized applications in our Kubernetes cluster and addresses the consequences of this approach, including enhanced security and user convenience balanced against the complexity of configuration and management.
 
 ### 0039 - Helm
 This ADR discusses the use of Helm for managing Kubernetes applications, recommending the use of Helm charts to package, configure, and deploy applications on Kubernetes.
