@@ -37,6 +37,10 @@
 - [x] [0034](./docs/adrs/0034-data-validation.md) - 2025-06-19 - Data validation with Pydantic
 - [ ] [0035](./docs/adrs/0035-cloud-storage.md) - 2025-06-19 - Cloud storage for non-hot data
 - [x] [0036](./docs/adrs/0036-build-process.md) - 2025-06-19 - Application build process
+- [ ] [0037](./docs/adrs/0037-extranet.md) - 2025-06-20 - Extranet
+- [ ] [0038](./docs/adrs/0038-extranet-authentication.md) - 2025-06-20 - Extranet authentication
+- [ ] [0039](./docs/adrs/0039-helm.md) - 2025-06-20 - Helm
+- [ ] [0040](./docs/adrs/0040-fluxcd.md) - 2025-06-20 - FluxCD
 
 ## Summary
 
@@ -262,4 +266,27 @@ It recommends using containerization for the build process to ensure consistency
 The ADR discusses the steps involved in building a Python application, including dependency resolution, testing, linting, and packaging.
 It also emphasizes the importance of build artifacts being properly versioned and stored in artifact repositories.
 
+### 0037 - Extranet
+This ADR discusses the design and implementation of an extranet, which is a secure network that allows external users to access specific resources or services.
+It outlines the requirements for the extranet, including user authentication, authorization, and access control.
+The ADR recommends using OAuth 2.0 and OpenID Connect for secure authentication and authorization, allowing external users to access the extranet using their own identity providers.
+It also discusses the use of API gateways for managing access to extranet resources and ensuring secure communication.
 
+### 0038 - Extranet Authentication
+This ADR focuses on the authentication mechanisms for the extranet, recommending the use of OAuth 2.0 and OpenID Connect for secure user authentication. We will use our own identity provider to manage user identities and support federation with external identity providers.
+It emphasizes the importance of implementing secure authentication flows, such as authorization code flow or client credentials flow, depending on the use case.
+The ADR also discusses the use of access tokens and refresh tokens for managing user sessions and ensuring secure access to extranet resources.
+It highlights the need for proper token validation and revocation mechanisms to maintain security and prevent unauthorized access.
+
+### 0039 - Helm
+This ADR discusses the use of Helm for managing Kubernetes applications, recommending the use of Helm charts to package, configure, and deploy applications on Kubernetes.
+It emphasizes the importance of using Helm for managing complex Kubernetes deployments, allowing for easy versioning and rollback of application releases.
+The ADR also suggests using Helm templates for parameterizing application configurations, enabling customization of deployments based on different environments or use cases.
+It also discusses best practices for organizing Helm charts, managing dependencies, and using Helm repositories for sharing charts within the organization or with the community.
+It highlights the benefits of using Helm for simplifying Kubernetes application management and improving deployment consistency across environments.
+
+### 0040 - FluxCD
+This ADR discusses the use of FluxCD for continuous delivery in Kubernetes environments, recommending it as a GitOps solution for managing application deployments.
+It emphasizes the importance of using Git as the single source of truth for application configurations and deployments, allowing for version control and auditability of changes.
+The ADR outlines the key components of FluxCD, including the Flux controller, source controller, and kustomize controller, and how they work together to automate the deployment process.
+We go a step further by using FluxCD to manage not only application deployments but also the entire Kubernetes cluster configuration, including networking, storage, and security policies through GitOps principles - this ensures that the entire cluster state is versioned and can be easily rolled back or audited.
