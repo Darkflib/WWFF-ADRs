@@ -5,8 +5,8 @@
 - [ ] [0002](./docs/adrs/0002-logging-and-error-handling.md) - 2025-06-19 - Logging and Error Handling
 - [ ] [0003](./docs/adrs/0003-telemetry.md) - 2025-06-19 - Telemetry
 - [ ] [0004](./docs/adrs/0004-configuration.md) - 2025-06-19 - Configuration
-- [ ] [0005](./docs/adrs/0005-application-structure.md) - 2025-06-19 - Application structure
-- [ ] [0006](./docs/adrs/0006-application-lifecycle.md) - 2025-06-19 - Application lifecycle
+- [x] [0005](./docs/adrs/0005-application-structure.md) - 2025-06-19 - Application structure
+- [x] [0006](./docs/adrs/0006-application-lifecycle.md) - 2025-06-20 - Application lifecycle
 - [ ] [0007](./docs/adrs/0007-application-deployment.md) - 2025-06-19 - Application deployment
 - [ ] [0008](./docs/adrs/0008-application-monitoring.md) - 2025-06-19 - Application monitoring
 - [ ] [0009](./docs/adrs/0009-application-security.md) - 2025-06-19 - Application security
@@ -14,7 +14,7 @@
 - [ ] [0011](./docs/adrs/0011-language-and-framework.md) - 2025-06-19 - Language and framework
 - [ ] [0012](./docs/adrs/0012-database.md) - 2025-06-19 - Database
 - [ ] [0013](./docs/adrs/0013-caching.md) - 2025-06-19 - Caching
-- [ ] [0014](./docs/adrs/0014-messaging.md) - 2025-06-19 - Messaging
+- [x] [0014](./docs/adrs/0014-messaging.md) - 2025-06-20 - Messaging
 - [ ] [0015](./docs/adrs/0015-async-processing.md) - 2025-06-19 - Async processing
 - [ ] [0016](./docs/adrs/0016-frontend.md) - 2025-06-19 - Frontend
 - [ ] [0017](./docs/adrs/0017-api-design.md) - 2025-06-19 - API design
@@ -68,13 +68,24 @@ This ADR addresses the configuration management strategy for the project. It emp
 We have our own configuration management and flagging system, which allows us to manage application settings and feature flags dynamically. 
 
 ### 0005 - Application Structure
-This ADR defines the overall structure of the application, including the organization of code, modules, and packages.
-It recommends following a modular architecture to promote separation of concerns and maintainability. The ADR also suggests using a layered architecture to separate different concerns such as presentation, business logic, and data access.
+This ADR defines the standard structure for our Python applications, emphasizing a layered architecture with clear separation of concerns. It outlines the organization of code into distinct layers (API, Service, Domain Model, Data Access, and Utility) and provides specific implementations for both Flask and FastAPI frameworks.
+
+The ADR incorporates principles from the 12-Factor App methodology, adapted specifically for Python applications. It addresses directory structure, package organization, and framework-specific patterns like Flask blueprints and FastAPI routers. By following this structure, we ensure maintainability, testability, and scalability of our applications.
 
 ### 0006 - Application Lifecycle
-This ADR outlines the application lifecycle, including development, testing, deployment, and maintenance phases.
-It emphasizes the importance of continuous integration and continuous deployment (CI/CD) practices to automate the application lifecycle.
-The ADR recommends using tools like GitHub Actions and Docker build/Google Cloud Build for automating the build and deployment processes.
+This ADR defines the complete lifecycle of our Python applications from initialization to retirement. It establishes standards and processes for each stage of an application's life:
+
+1. **Initialization**: Standard project templates and setup procedures
+2. **Development**: Environment setup, workflow, and coding standards
+3. **Testing**: Multi-layered testing strategy with unit, integration, and E2E tests
+4. **Building**: Containerized build process with CI/CD integration
+5. **Deployment**: Environment definitions and controlled deployment processes
+6. **Operation**: Health checks, monitoring, and observability standards
+7. **Maintenance**: Regular updates, security patches, and technical debt reduction
+8. **Scaling**: Strategies for handling increased load
+9. **Retirement**: Orderly decommissioning process
+
+The ADR ensures consistency across projects, improves developer productivity, and maintains application quality throughout its lifetime.
 
 ### 0007 - Application Deployment
 This ADR discusses the deployment strategy for the application, including the use of containerization and orchestration.
@@ -116,9 +127,14 @@ It emphasizes the importance of caching to reduce database load and improve appl
 The ADR also suggests implementing cache invalidation strategies to ensure data consistency between the cache and the database.
 
 ### 0014 - Messaging
-This ADR outlines the messaging strategy for the application, recommending the use of RabbitMQ or Google Cloud Pub/Sub for asynchronous communication between services.
-It emphasizes the importance of decoupling services through messaging to improve scalability and reliability.
-The ADR also suggests using message queues for handling background tasks and implementing retry mechanisms for failed messages to ensure message delivery.
+This ADR establishes CloudEvents as our standard message format specification for all service-to-service communication. CloudEvents provides a consistent, transport-independent way to describe event data, enabling flexible and interoperable messaging across our applications.
+
+The ADR covers multiple transport protocols:
+- HTTP for synchronous communication and webhooks
+- AMQP (via RabbitMQ) for reliable asynchronous messaging
+- MQTT for lightweight IoT scenarios
+
+It defines implementation patterns for Python applications, including code examples for creating and consuming CloudEvents messages across different transport mechanisms. The ADR also addresses message reliability, security, and deployment considerations, ensuring that our distributed systems communicate effectively while remaining loosely coupled.
 
 ### 0015 - Async Processing
 This ADR discusses the asynchronous processing strategy for the application, recommending the use of RabbitMQ or Google Cloud Pub/Sub for handling background tasks and long-running processes.
