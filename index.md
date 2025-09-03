@@ -46,6 +46,8 @@
 
 This repository contains a collection of Architectural Decision Records (ADRs) that document the architectural decisions made during the development of a software project. Each ADR is a standalone document that describes a specific decision, its context, and its consequences. Some ADRs may also include links to related decisions or external resources for further reading. Many are opinionated, but they are all based on our experience and best practices. Some ADRs may be updated or superseded as the project evolves, and new ADRs may be added to address new decisions or changes in the architecture.
 
+Some are incomplete as the resulting doc has not been completed, but the summary provides enough detail for most uses - by design.
+
 ### 0000 - Initial ADR Template
 This ADR provides a template for documenting architectural decisions. It is based on the template from the [ADR GitHub repository](https://github.com/adr/madr).
 
